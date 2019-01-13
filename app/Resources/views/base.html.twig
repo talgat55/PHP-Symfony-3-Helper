@@ -2,12 +2,174 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Сайт  со снипитеми по веб разработке">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %} Главная {% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+        <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/owl.theme.default.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/colorbox.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/jquery-ui.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/jquery.timepicker.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/main_styles.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/responsive.css') }}" rel="stylesheet" type="text/css">
+
     </head>
     <body>
+    <div class="super_container">
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo">
+                                <a href="#">
+                                    <div>The Venue</div>
+                                </a>
+                            </div>
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li><a href="index.html">home</a></li>
+                                    <li><a href="about.html">about us</a></li>
+                                    <li><a href="menu.html">menu</a></li>
+                                    <li><a href="#">delivery</a></li>
+                                    <li><a href="blog.html">blog</a></li>
+                                    <li><a href="contact.html">contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hamburger -->
+
+        <div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
+            <div class="hamburger">
+                <div class="menu_toggle d-flex flex-row align-items-center justify-content-start">
+                    <span>menu</span>
+                    <div class="hamburger_container">
+                        <div class="menu_hamburger">
+                            <div class="line_1 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                            <div class="line_2 hamburger_lines" style="visibility: inherit; opacity: 1;"></div>
+                            <div class="line_3 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu -->
+
+        <div class="menu trans_800">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+                <ul>
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="about.html">about us</a></li>
+                    <li><a href="menu.html">menu</a></li>
+                    <li><a href="#">delivery</a></li>
+                    <li><a href="blog.html">blog</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                </ul>
+            </div>
+            <div class="menu_reservations_phone ml-auto">Reservations: +34 586 778 8892</div>
+        </div>
+
+        <!-- Home -->
+
+        <div class="home">
+            <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ asset('images/menu.jpg') }}" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content text-center">
+                                <div class="home_subtitle page_subtitle">The Venue</div>
+                                <div class="home_title"><h1>The Menu</h1></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
         {% block body %}{% endblock %}
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+
+                    {#<!-- Footer Logo -->#}
+                    {#<div class="col-lg-3 footer_col">#}
+                        {#<div class="footer_logo">#}
+                            {#<div class="footer_logo_title">The Venue</div>#}
+                            {#<div class="footer_logo_subtitle">restaurant</div>#}
+                        {#</div>#}
+                        {#<div class="copyright">#}
+                            {#<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->#}
+                            {#<p style="line-height: 1.2;">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>#}
+                            {#<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>#}
+                    {#</div>#}
+
+                    {#<!-- Footer About -->#}
+                    {#<div class="col-lg-6 footer_col">#}
+                        {#<div class="footer_about">#}
+                            {#<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Ut non justo eleifend, facilisis nibh ut, interdum odio.</p>#}
+                        {#</div>#}
+                    {#</div>#}
+
+                    {#<!-- Footer Contact -->#}
+                    {#<div class="col-lg-3 footer_col">#}
+                        {#<div class="footer_contact">#}
+                            {#<ul>#}
+                                {#<li class="d-flex flex-row align-items-start justify-content-start">#}
+                                    {#<div><div class="footer_contact_title">Address:</div></div>#}
+                                    {#<div class="footer_contact_text">481 Creekside Lane Avila CA 93424</div>#}
+                                {#</li>#}
+                                {#<li class="d-flex flex-row align-items-start justify-content-start">#}
+                                    {#<div><div class="footer_contact_title">Address:</div></div>#}
+                                    {#<div class="footer_contact_text">+53 345 7953 32453</div>#}
+                                {#</li>#}
+                                {#<li class="d-flex flex-row align-items-start justify-content-start">#}
+                                    {#<div><div class="footer_contact_title">Address:</div></div>#}
+                                    {#<div class="footer_contact_text">yourmail@gmail</div>#}
+                                {#</li>#}
+                            {#</ul>#}
+                        {#</div>#}
+                    {#</div>#}
+                </div>
+            </div>
+        </footer>
+    </div>
         {% block javascripts %}{% endblock %}
+        <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+        <script src="{{ asset('js/popper.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/TweenMax.min.js') }}"></script>
+        <script src="{{ asset('js/TimelineMax.min.js') }}"></script>
+        <script src="{{ asset('js/TimelineMax.min.js') }}"></script>
+        <script src="{{ asset('js/ScrollMagic.min.js') }}"></script>
+        <script src="{{ asset('js/ScrollMagic.min.js') }}"></script>
+        <script src="{{ asset('js/animation.gsap.min.js') }}"></script>
+        <script src="{{ asset('js/ScrollToPlugin.min.js') }}"></script>
+        <script src="{{ asset('js/owl.carousel.js') }}"></script>
+        <script src="{{ asset('js/easing.js') }}"></script>
+        <script src="{{ asset('js/parallax.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.colorbox-min.js') }}"></script>
+        <script src="{{ asset('js/jquery-ui.js') }}"></script>
+        <script src="{{ asset('js/jquery.timepicker.js') }}"></script>
+        <script src="{{ asset('js/custom.js') }}"></script>
     </body>
 </html>
