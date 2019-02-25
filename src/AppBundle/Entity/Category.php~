@@ -100,28 +100,5 @@ class Category
     {
         return $this->parent_id;
     }
-
-    /**
-     * Set dept
-     *
-     * @param integer $dept
-     *
-     * @return Category
-     */
-    public function setDept($dept)
-    {
-        $this->dept = $dept;
-
-        return $this;
-    }
-
-    /**
-     * Get dept
-     *
-     * @return integer
-     */
-    public function getDept()
-    {
-        return $this->dept;
-    }
 }
+

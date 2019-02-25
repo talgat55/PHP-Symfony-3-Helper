@@ -10,11 +10,40 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CategoryController extends Controller
 {
+
+
     /**
      * @Route("/category/", name="category.index")
      */
     public function indexAction()
     {
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->getRepository('AppBundle:Category')->findAllCateriesforApi();
+        function search($data,  $current, $parent = null)
+        {
+            foreach ($data as $item) {
+
+
+                if ($item->getParentId() == $parent) {
+
+                    if($item->getName()){
+                        $value =  $item->getName();
+                    }else{
+                        $value = 0;
+                    }
+
+                    array_push($current, [$value]);
+
+                    search($data, $current, $item->getId());
+                }
+            }
+            return $current;
+        }
+
+
+
+        dump(search($query,  [], $parent = null));
+       // dump($query);
 
         return $this->render('AppBundle:Category:index.html.twig', array(
             // ...

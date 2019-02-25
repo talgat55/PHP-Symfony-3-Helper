@@ -1,7 +1,7 @@
 <?php
 
 namespace AppBundle\Repository;
-
+use AppBundle\Entity\Category;
 /**
  * CategoryRepository
  *
@@ -11,5 +11,16 @@ namespace AppBundle\Repository;
 class CategoryRepository extends \Doctrine\ORM\EntityRepository
 {
 
+
+
+    public function findAllCateriesforApi()
+    {
+        $builder = $this
+            ->createQueryBuilder('c')
+            ->getQuery()
+            ->getResult();
+
+        return $builder;
+    }
 
 }
