@@ -9,7 +9,7 @@
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
-
+        {%- include "MaterializeBundle:Materialize:css.html.twig" -%}
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
         <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet" type="text/css">
@@ -102,10 +102,14 @@
             </div>
         </div>
 
+        <div class="container">
+            <div class="row">
+
 
 
         {% block body %}{% endblock %}
-
+            </div>
+        </div>
         <footer class="footer">
             <div class="container">
                 <div class="row">
@@ -153,6 +157,7 @@
         </footer>
     </div>
         {% block javascripts %}{% endblock %}
+        {%- include "MaterializeBundle:Materialize:js.html.twig" -%}
         <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
         <script src="{{ asset('js/popper.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>

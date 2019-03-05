@@ -1188,3 +1188,19 @@ section
 {
 	white-space: nowrap;
 }
+.title-admin{
+	text-align: center;
+	width: 100%;
+	margin-bottom: 30px;
+}
+.create-form{
+	width: 50%;
+	margin: 0 auto;
+	display: block;
+}
+*{
+	font-size: 16px;
+}
+label{
+	font-size: 16px!important;
+}

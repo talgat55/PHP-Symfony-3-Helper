@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use AppBundle\Form\CategoryType;
 
 class CategoryController extends Controller
 {
@@ -58,30 +59,30 @@ class CategoryController extends Controller
     public function createAction(Request $request)
     {
 
-       // $request =  $request->request->all();
-        $request = $request->get('test');
+//        $request = $request->get('test');
 
-        //$requesttest =  $request->request->get('name');
-//        $form = $this->createForm(BlogPostType::class);
-//        $form->handleRequest($request);
-//        if ($form->isSubmitted() && $form->isValid()) {
-//
-//            $blogPost = $form->getData();
-//            $em = $this->getDoctrine()->getManager();
-//            $em->persist($blogPost);
-//            $em->flush();
-//
-//            return $this->redirectToRoute('category.index');
-//        }
-//        return $this->render('AppBundle:Category:create.html.twig', array(
-//
-//        ));
-        $response = new Response();
-        $response->setContent(json_encode(array(
-            $request
-        )));
-        $response->headers->set('Content-Type', 'application/json');
-        return $response;
+        $form = $this->createForm(CategoryType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $blogPost = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            dump($blogPost);
+
+            $em->persist($blogPost);
+            $em->flush();
+
+            return $this->redirectToRoute('category.index');
+        }
+        return $this->render('AppBundle:Category:create.html.twig', array(
+            'form' => $form->createView(),
+        ));
+//        $response = new Response();
+//        $response->setContent(json_encode(array(
+//            $request
+//        )));
+//        $response->headers->set('Content-Type', 'application/json');
+//        return $response;
     }
 
     /**
