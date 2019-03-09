@@ -68,7 +68,7 @@ class CategoryController extends Controller
             $blogPost = $form->getData();
             $em = $this->getDoctrine()->getManager();
             dump($blogPost);
-
+            $blogPost->setDept(0);
             $em->persist($blogPost);
             $em->flush();
 

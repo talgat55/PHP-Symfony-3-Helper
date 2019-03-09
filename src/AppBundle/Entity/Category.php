@@ -31,7 +31,7 @@ class Category
     /**
      * @var int
      *
-     * @ORM\Column(name="parent_id", type="integer")
+     * @ORM\Column(name="parent_id", type="string")
      */
     private $parent_id;
 
@@ -80,7 +80,7 @@ class Category
     /**
      * Set parentId
      *
-     * @param integer $parentId
+     * @param string $parentId
      *
      * @return Category
      */
@@ -94,7 +94,7 @@ class Category
     /**
      * Get parentId
      *
-     * @return int
+     * @return string
      */
     public function getParentId()
     {
@@ -123,5 +123,10 @@ class Category
     public function getDept()
     {
         return $this->dept;
+    }
+
+    public function __toString() {
+
+        return $this->parent_id;
     }
 }

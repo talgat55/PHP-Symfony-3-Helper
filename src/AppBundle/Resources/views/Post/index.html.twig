@@ -1,0 +1,37 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Блог{% endblock %}
+
+{% block body %}
+    <div class="wrap">
+        <h1 class="title-page"></h1>
+        <ul class="lists-post">
+            {% for article in pagination %}
+                <li class="post-item">
+                    <div class="iamge">
+                        <a href="{{ path('post.detail', {'slug': article.slug}) }}"  title="{{ article.title }}"  >
+                            <img src="{{ article.image }}" alt="{{ article.title }}" />
+                        </a>
+
+                    </div>
+
+                </li>
+
+
+            {% else %}
+                <p class="not-found-rows">нет записей</p>
+            {% endfor %}
+
+        </ul>
+
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}
