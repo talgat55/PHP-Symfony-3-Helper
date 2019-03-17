@@ -24,6 +24,8 @@ class AppKernel extends Kernel
             new Evheniy\MaterializeBundle\MaterializeBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new FOS\CKEditorBundle\FOSCKEditorBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
 
 
         ];

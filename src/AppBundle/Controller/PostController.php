@@ -44,19 +44,19 @@ class PostController extends Controller
     }
 
     /**
-     * @Route("/blogs/{page}", name="post.index")
+     * @Route("/blogs", name="post.index")
      */
-    public function indexAction($page= null)
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $query = $em->getRepository('AppBundle:Post')->findAll();
+
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $query,
-            $page, /*page number*/
+            $request->query->getInt('page', 1), /*page number*/
             10 /*limit per page*/
         );
-
 
 
 

@@ -8,6 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 class PostType extends AbstractType
 {
     /**
@@ -23,7 +24,7 @@ class PostType extends AbstractType
                 'label' => "Категория"
             ])
             ->add('image', FileType::class, ['label' => 'Изображение'])
-            ->add('content', TextType::class , [ 'label' => "Контент"]);
+            ->add('content', CKEditorType::class , [ 'label' => "Контент"]);
     }/**
      * {@inheritdoc}
      */
