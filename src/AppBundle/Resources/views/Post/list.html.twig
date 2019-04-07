@@ -1,0 +1,47 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+    <div class="wrap">
+        <h1 class="title-page">{{ title }}</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>  id  </th>
+                    <th>  Название  </th>
+                    <th>  Изображение  </th>
+                    <th>  Действие  </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for article in pagination %}
+                 <tr>
+                     <td>  {{ article.id }} </td>
+                     <td>  {{ article.title }} </td>
+                     <td>  {%  if  article.image  %}   On     {%  else %}   No {%   endif %} </td>
+                     <td>  <a href="{{ article.title }} "> Редактировать</a> </td>
+
+                 </tr>
+
+            {% endfor %}
+            </tbody>
+
+        </table>
+
+
+
+
+
+
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}

@@ -80,6 +80,28 @@ class PostController extends Controller
             'article' => $query
         ]);
     }
+    /**
+     * @Route("/blogs/list", name="post.list")
+     */
+    public function listAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->getRepository('AppBundle:Post')->findAll();
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1), /*page number*/
+            10 /*limit per page*/
+        );
+
+
+
+        return $this->render('AppBundle:Post:index.html.twig', [
+            'pagination' => $pagination,
+            'title' => 'Список записей'
+        ]);
+    }
 
     /**
      * @return string
